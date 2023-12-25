@@ -6,7 +6,7 @@ import threading
 from some import pkey, cT0, cT1, cT2, cT3_0, cT3_1, cT3_2, cT3_3, cT4, cT5, cT5
 global glWin
 import asyncio
-timeout_connect = 2
+timeout_connect = 3
 timeout_simple = 1
 
 async def dynamic_call(selfi):
