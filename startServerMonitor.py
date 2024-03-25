@@ -107,7 +107,7 @@ async def tab5():
         command = cT5# 5 tab // for connect to 145
         for sesCur in tabW.sessions:
             await sesCur.async_send_text(command)
-            time.sleep(timeout_connect)
+            time.sleep(timeout_connect+9)
             await sesCur.async_send_text(pkey+'\n')
         time.sleep(timeout_simple)
         for sesCur in tabW.sessions:
@@ -236,7 +236,16 @@ async def main(connection):
         command = "docker container logs  freegpt -f -n 99"
         await glWin.tabs[1].sessions[14].async_send_text(command)
         
-
+        
+        command = "cd /home/Aleksandr/bk/ && ls -lsaht \n"
+        await glWin.tabs[4].sessions[1].async_send_text(command)
+        command = "cd /home/Aleksandr/YoCol/darknet && tail -f -n 99 output.txt \n"
+        await glWin.tabs[4].sessions[4].async_send_text(command)
+        
+        command = "cd /home/Aleksandr/keras-retinanet/snapshots && ls -lsaht \n"
+        await glWin.tabs[5].sessions[1].async_send_text(command)
+        command = "cd  /home/Aleksandr/keras-retinanet && tail -f -n 99 output.txt \n"
+        await glWin.tabs[5].sessions[4].async_send_text(command)
 
 
 
