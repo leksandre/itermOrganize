@@ -239,11 +239,19 @@ async def main(connection):
         
         command = "cd /home/Aleksandr/bk/ && ls -lsaht \n"
         await glWin.tabs[4].sessions[1].async_send_text(command)
+        command = "cd /home/Aleksandr/YoCol/darknet/ \n"
+        await glWin.tabs[5].sessions[2].async_send_text(command)
+        command = "ps -ax|grep -i darknet \n"
+        await glWin.tabs[5].sessions[3].async_send_text(command)
         command = "cd /home/Aleksandr/YoCol/darknet && tail -f -n 99 output.txt \n"
         await glWin.tabs[4].sessions[4].async_send_text(command)
         
         command = "cd /home/Aleksandr/keras-retinanet/snapshots && ls -lsaht \n"
         await glWin.tabs[5].sessions[1].async_send_text(command)
+        command = "cd /home/Aleksandr/keras-retinanet \n"
+        await glWin.tabs[5].sessions[2].async_send_text(command)
+        command = "ps -ax|grep -i keras_retinanet \n"
+        await glWin.tabs[5].sessions[3].async_send_text(command)
         command = "cd  /home/Aleksandr/keras-retinanet && tail -f -n 99 output.txt \n"
         await glWin.tabs[5].sessions[4].async_send_text(command)
 
