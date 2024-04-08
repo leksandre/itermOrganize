@@ -231,20 +231,26 @@ async def main(connection):
         command = "docker container logs facebook_listener -f  --tail 99\n"# logintap 
         await glWin.tabs[2].sessions[17].async_send_text(command)
 
-        command = "docker container logs  elated_zhukovsky -f -n 99"
+        command = "docker container logs  elated_zhukovsky -f -n 99 \n"
         await glWin.tabs[1].sessions[13].async_send_text(command)
-        command = "docker container logs  freegpt -f -n 99"
+        command = "docker container logs  freegpt -f -n 99 \n"
         await glWin.tabs[1].sessions[14].async_send_text(command)
         
         
         command = "cd /home/Aleksandr/bk/ && ls -lsaht \n"
         await glWin.tabs[4].sessions[1].async_send_text(command)
         command = "cd /home/Aleksandr/YoCol/darknet/ \n"
-        await glWin.tabs[5].sessions[2].async_send_text(command)
+        await glWin.tabs[4].sessions[2].async_send_text(command)
         command = "ps -ax|grep -i darknet \n"
-        await glWin.tabs[5].sessions[3].async_send_text(command)
-        command = "cd /home/Aleksandr/YoCol/darknet && tail -f -n 99 output.txt \n"
+        await glWin.tabs[4].sessions[3].async_send_text(command)
+        command = "cd /home/Aleksandr/YoCol/darknet && tail -f -n 99 output.txt \n\n\n\n\n"
         await glWin.tabs[4].sessions[4].async_send_text(command)
+        
+        command = "cd nnstream/ \n"
+        await glWin.tabs[4].sessions[7].async_send_text(command)
+        command = "/usr/local/bin/python3.10 nnfame_yMock.py \n"
+        await glWin.tabs[4].sessions[7].async_send_text(command)
+        
         
         command = "cd /home/Aleksandr/keras-retinanet/snapshots && ls -lsaht \n"
         await glWin.tabs[5].sessions[1].async_send_text(command)
@@ -252,7 +258,7 @@ async def main(connection):
         await glWin.tabs[5].sessions[2].async_send_text(command)
         command = "ps -ax|grep -i keras_retinanet \n"
         await glWin.tabs[5].sessions[3].async_send_text(command)
-        command = "cd  /home/Aleksandr/keras-retinanet && tail -f -n 99 output.txt \n"
+        command = "cd  /home/Aleksandr/keras-retinanet && tail -f -n 99 output.txt \n\n\n\n\n"
         await glWin.tabs[5].sessions[4].async_send_text(command)
 
 
