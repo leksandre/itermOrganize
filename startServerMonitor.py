@@ -3,7 +3,7 @@
 import iterm2
 import time
 import threading
-from some import pkey, cT0, cT1, cT2, cT3_0, cT3_1, cT3_2, cT3_3, cT4, cT5, cT5
+from some import pkey, pkeyV, cT0, cT1, cT2, cT3_0, cT3_1, cT3_2, cT3_3, cT4, cT5, cT5, cT115, cT116
 global glWin
 import asyncio
 timeout_connect = 3
@@ -91,7 +91,7 @@ async def tab4():
         command = cT4# 4 tab
         for sesCur in tabW.sessions:
             await sesCur.async_send_text(command)
-            time.sleep(timeout_connect)
+            time.sleep(timeout_connect+9)
             await sesCur.async_send_text(pkey+'\n')
         time.sleep(timeout_simple)
         for sesCur in tabW.sessions:
@@ -117,7 +117,38 @@ async def tab5():
             await sesCur.async_send_text('ulimit -n 1000000 & ulimit -u 99000000'+'\n')
 
 
-
+             
+async def tab6():
+        global glWin
+        tabW = glWin.tabs[7]
+        command = cT115# 6 tab // for connect to 115
+        for sesCur in tabW.sessions:
+            await sesCur.async_send_text(command)
+            time.sleep(timeout_connect+9)
+            await sesCur.async_send_text(pkeyV+'\n')
+        time.sleep(timeout_simple)
+        for sesCur in tabW.sessions:
+            await sesCur.async_send_text('sudo su'+'\n')
+        time.sleep(timeout_simple)
+        for sesCur in tabW.sessions:
+            await sesCur.async_send_text('ulimit -n 1000000 & ulimit -u 99000000'+'\n')
+                
+               
+             
+async def tab7():
+        global glWin
+        tabW = glWin.tabs[6]
+        command = cT116# 7 tab // for connect to 116
+        for sesCur in tabW.sessions:
+            await sesCur.async_send_text(command)
+            time.sleep(timeout_connect+9)
+            await sesCur.async_send_text(pkeyV+'\n')
+        time.sleep(timeout_simple)
+        for sesCur in tabW.sessions:
+            await sesCur.async_send_text('sudo su'+'\n')
+        time.sleep(timeout_simple)
+        for sesCur in tabW.sessions:
+            await sesCur.async_send_text('ulimit -n 1000000 & ulimit -u 99000000'+'\n')
                 
                 
                 
@@ -139,7 +170,7 @@ async def main(connection):
 
 
         if 1:
-                for i2s in [0,1,2,3,4,5]:
+                for i2s in [6,7,0,1,2,3,4,5]:
                     await tabAction(i2s)
                         # thread = threading.Thread(target=tabAction, args=(i2s,))
                         # thread.daemon = True
