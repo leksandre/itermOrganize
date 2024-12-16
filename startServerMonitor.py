@@ -41,11 +41,12 @@ async def tab0():
         command = "cd tele\n"
         await glWin.tabs[0].sessions[0].async_send_text(command)
         await glWin.tabs[0].sessions[1].async_send_text(command)
-        command = "pkill -f -9 restarter_tele.py & pkill -f -9  catchInput.py && pkill -f -9 restarter_tele.py & pkill -f -9  catchInput.py\n"
-        await glWin.tabs[0].sessions[1].async_send_text(command)
+        # command = "pkill -f -9 restarter_tele.py & pkill -f -9  catchInput.py && pkill -f -9 restarter_tele.py & pkill -f -9  catchInput.py\n"
+        # await glWin.tabs[0].sessions[1].async_send_text(command)
+        # time.sleep(timeout_connect)
         time.sleep(timeout_connect)
-        time.sleep(timeout_connect)
-        command = "python3.6 restarter_tele.py\n"
+        # command = "python3.6 restarter_tele.py\n"
+        command = "tail -f -n 99 cron.log\n"
         await glWin.tabs[0].sessions[0].async_send_text(command)
     
 async def tab1():
@@ -170,7 +171,7 @@ async def main(connection):
 
 
         if 1:
-                for i2s in [6,7,0,1,2,3,4,5]:
+                for i2s in [0,1,2,3]:#,4,5,6,7,
                     await tabAction(i2s)
                         # thread = threading.Thread(target=tabAction, args=(i2s,))
                         # thread.daemon = True
@@ -277,10 +278,10 @@ async def main(connection):
         command = "cd /home/Aleksandr/YoCol/darknet && tail -f -n 99 output.txt \n\n\n\n\n"
         await glWin.tabs[4].sessions[4].async_send_text(command)
         
-        command = "cd nnstream/ \n"
-        await glWin.tabs[4].sessions[7].async_send_text(command)
-        command = "/usr/local/bin/python3.10 nnfame_yMock.py \n"
-        await glWin.tabs[4].sessions[7].async_send_text(command)
+        # command = "cd nnstream/ \n"
+        # await glWin.tabs[4].sessions[7].async_send_text(command)
+        # command = "/usr/local/bin/python3.10 nnfame_yMock.py \n"
+        # await glWin.tabs[4].sessions[7].async_send_text(command)
         
         
         command = "cd /home/Aleksandr/keras-retinanet/snapshots && ls -lsaht \n"
